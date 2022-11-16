@@ -10,7 +10,8 @@ jobs:
     name: trail
     runs-on: ubuntu-latest
     environment:
-    name: Production
+    name: Task2
+    url : http://trail.com
     strategy:
       matrix:
         node-version: [16.x]
