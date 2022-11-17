@@ -16,21 +16,21 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v5
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v5
 - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v5
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - name: Install Plugin and Deploy
-      uses: serverless/github-action@v3
+      uses: serverless/github-action@v5
       with:
         args: -c "serverless plugin install --name serverless-iam-roles-per-function && serverless deploy stage Task2"
         entrypoint: /bin/sh
     - name: serverless deploy
-      uses: serverless/github-action@v3
+      uses: serverless/github-action@v5
       with:
         args: deploy
       env:
